@@ -73,7 +73,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost:8080/experiences"
+        "https://api.mushfiqussalehin.com/experiences"
       );
       const data = await response.json();
       setExperiences(data);
@@ -84,7 +84,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost:8080/educations"
+        "https://api.mushfiqussalehin.com/educations"
       );
       const data = await response.json();
       setEducations(data);
@@ -94,7 +94,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:8080/projects");
+      const response = await fetch("https://api.mushfiqussalehin.com/projects");
       const data = await response.json();
       setProjects(data);
     };
@@ -103,7 +103,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:8080/skills");
+      const response = await fetch("https://api.mushfiqussalehin.com/skills");
       const data = await response.json();
       setSkills(data);
     };
