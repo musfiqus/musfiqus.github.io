@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import ExperienceItem, { Experience } from "./ExperienceItem";
 import EducationItem, { Education } from "./EducationItem";
+import ProjectItem, { Project } from "./ProjectItem";
+import SkillItem, { Skill } from "./SkillItem";
 import MenuIcon from "./MenuIcon";
 import logo_name from "./logo_name.png";
 import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
@@ -15,10 +17,17 @@ const App: React.FC = () => {
     about: React.createRef(),
     experience: React.createRef(),
     education: React.createRef(),
-    contact: React.createRef(),
+    project: React.createRef(),
+    skills: React.createRef(),
   });
   const [experiences, setExperiences] = useState<Array<Experience>>([]);
   const [educations, setEducations] = useState<Array<Education>>([]);
+  const [projects, setProjects] = useState<Array<Project>>([]);
+  const [skills, setSkills] = useState<Array<Skill>>([]);
+
+  useEffect(() => {
+    document.title = "Mushfiqus Salehin";
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +52,7 @@ const App: React.FC = () => {
           }
         });
       },
-      { threshold: 0.7 }
+      { threshold: 0.25 }
     );
 
     Object.values(currentSectionRefs).forEach((sectionRef) => {
@@ -64,7 +73,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://api.mushfiqussalehin.com/experiences"
+        "http://localhost:8080/experiences"
       );
       const data = await response.json();
       setExperiences(data);
@@ -75,7 +84,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://api.mushfiqussalehin.com/educations"
+        "http://localhost:8080/educations"
       );
       const data = await response.json();
       setEducations(data);
@@ -83,8 +92,26 @@ const App: React.FC = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:8080/projects");
+      const data = await response.json();
+      setProjects(data);
+    };
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:8080/skills");
+      const data = await response.json();
+      setSkills(data);
+    };
+    fetchData();
+  }, []);
+
   return (
-    <div className="bg-gray-50 overflow-{navOpen ? 'hidden' : 'scroll'}">
+    <div style={{ fontFamily: 'Roboto, sans-serif' }} className="bg-gray-50 overflow-{navOpen ? 'hidden' : 'scroll'}">
       <header
         className={`fixed w-full bg-gray-50 flex justify-between items-center px-4 md:px-12 transition-all duration-200 ${
           scrolledFromTop ? "h-14 shadow-lg" : "h-24"
@@ -139,9 +166,14 @@ const App: React.FC = () => {
                 Education
               </a>
             </li>
-            <li className={activeSection === "contact" ? "text-blue-500" : ""}>
-              <a href="#contact" onClick={() => setNavOpen(false)}>
-                Contact
+            <li className={activeSection === "project" ? "text-blue-500" : ""}>
+              <a href="#project" onClick={() => setNavOpen(false)}>
+                Projects
+              </a>
+            </li>
+            <li className={activeSection === "skills" ? "text-blue-500" : ""}>
+              <a href="#skills" onClick={() => setNavOpen(false)}>
+                Skills
               </a>
             </li>
             <li className="md:hidden">
@@ -158,17 +190,14 @@ const App: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg p-6 md:w-3/4 lg:w-3/5">
           {" "}
-          {/* width classes added here */}
           <div className="mb-4 border-b border-gray-200 pb-2">
             {" "}
-            {/* Removed flex and other flex styles */}
             <h1 className="font-bold text-2xl md:text-3xl text-black leading-tight">
               {"Hi! I'm Mushfiqus Salehin"}
             </h1>
           </div>
           <div className="mb-4 border-b border-gray-200 pb-2">
             {" "}
-            {/* Removed flex and other flex styles */}
             <p className="mt-4 text-lg text-black">
               {
                 "I'm interested in developing scalable and efficient software solutions which can have a profound impact on people's daily lives and can be deployed into low powered devices. My dream is to make processing heavy technologies like machine learning more accessible to mass people, especially in areas like my home country where a very limited number of people can afford high end devices capable of on-device data crunching."
@@ -215,7 +244,7 @@ const App: React.FC = () => {
         className="flex justify-center pb-12 md:px-12"
       >
         <div className="experiences px-8 bg-white rounded-xl shadow-lg p-6 mt-4 mb-4 lg:w-3/5">
-          <h2 className="text-4xl font-bold mb-4 border-b border-gray-200 pb-2">
+        <h2 className="text-3xl font-bold mb-4 border-b border-gray-200 pb-2 text-black">
             Experiences
           </h2>
           <ul className="experience-list mt-4">
@@ -232,7 +261,7 @@ const App: React.FC = () => {
         className="flex justify-center pb-12 md:px-12"
       >
         <div className="education px-8 bg-white rounded-xl shadow-lg p-6 mt-4 mb-4 md:w-3/4 lg:w-3/5">
-          <h2 className="text-4xl font-bold mb-4 border-b border-gray-200 pb-2">
+        <h2 className="text-3xl font-bold mb-4 border-b border-gray-200 pb-2 text-black">
             Education
           </h2>
           <ul className="education-list mt-4">
@@ -244,10 +273,38 @@ const App: React.FC = () => {
       </section>
 
       <section
-        id="contact"
-        ref={sectionRefs.current.contact}
-        className="min-h-screen"
-      ></section>
+        id="project"
+        ref={sectionRefs.current.project}
+        className="flex justify-center pb-12 md:px-12"
+      >
+        <div className="projects px-8 bg-white rounded-xl shadow-lg p-6 mt-4 mb-4 md:w-3/4 lg:w-3/5"> {/* Similar width to 'education' and 'experience' sections */}
+        <h2 className="text-3xl font-bold mb-4 border-b border-gray-200 pb-2 text-black">
+            Projects
+          </h2>
+          <ul className="projects-list mt-4">
+            {projects.map((project, index) => (
+              <ProjectItem key={index} project={project} /> // Displaying each project as a ProjectItem
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section
+        id="skills"
+        ref={sectionRefs.current.skills}
+        className="flex justify-center pb-12 md:px-12"
+      >
+        <div className="skills px-8 bg-white rounded-xl shadow-lg p-6 mt-4 mb-4 md:w-3/4 lg:w-3/5"> 
+        <h2 className="text-3xl font-bold mb-4 border-b border-gray-200 pb-2 text-black">
+            Skills
+          </h2>
+          <ul className="skills-list mt-4">
+            {skills.map((skill, index) => (
+              <SkillItem key={index} skill={skill} />
+            ))}
+          </ul>
+        </div>
+      </section>
     </div>
   );
 };

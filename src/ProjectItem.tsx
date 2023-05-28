@@ -1,11 +1,14 @@
 import React from "react";
 
 export interface Project {
-    name: string;
-    url: string;
-    tech: string;
-    features: Array<string>;
-    date: string;
+  name: string;
+  url: string;
+  tech: string;
+  features: Array<{
+    text: string;
+    keywords: Array<string>;
+  }>;
+  date: string;
 }
 
 interface ProjectItemProps {
@@ -34,7 +37,18 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
       <ul className="features-list list-disc ml-8 mt-4">
         {project.features.map((feature, index) => (
           <li key={index} className="text-lg">
-            {feature}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: feature.keywords.reduce(
+                  (text, keyword) =>
+                    text.replace(
+                      new RegExp(`\\b${keyword}\\b`, "g"),
+                      `<strong>${keyword}</strong>`
+                    ),
+                  feature.text
+                ),
+              }}
+            />
           </li>
         ))}
       </ul>

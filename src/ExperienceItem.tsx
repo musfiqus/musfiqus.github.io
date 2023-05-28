@@ -1,11 +1,15 @@
 import React from "react";
 
 export interface Experience {
-    title: string;
-    company: string;
-    location: string;
-    duration: Array<Array<number>>;
-    duties: Array<string>;
+  title: string;
+  company: string;
+  location: string;
+  start_date: string;
+  end_date: string;
+  duties: Array<{
+    text: string;
+    keywords: Array<string>;
+  }>;
 }
 
 interface ExperienceItemProps {
@@ -22,18 +26,10 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
         </div>
         <div className="text-right">
           <p className="duration text-sm text-gray-500">
-            {`${new Date(
-              experience.duration[0][0],
-              experience.duration[0][1],
-              experience.duration[0][2]
-            ).toLocaleString("default", {
+            {`${new Date(experience.start_date).toLocaleString("default", {
               month: "short",
               year: "numeric",
-            })} - ${new Date(
-              experience.duration[1][0],
-              experience.duration[1][1],
-              experience.duration[1][2]
-            ).toLocaleString("default", {
+            })} - ${new Date(experience.end_date).toLocaleString("default", {
               month: "short",
               year: "numeric",
             })}`}
@@ -44,7 +40,18 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
       <ul className="duties-list list-disc ml-8 mt-4">
         {experience.duties.map((duty, index) => (
           <li key={index} className="text-lg">
-            {duty}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: duty.keywords.reduce(
+                  (text, keyword) =>
+                    text.replace(
+                      new RegExp(`\\b${keyword}\\b`, "g"),
+                      `<strong>${keyword}</strong>`
+                    ),
+                  duty.text
+                ),
+              }}
+            />
           </li>
         ))}
       </ul>
