@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.toolbar {
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.toolbar ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
+
+.toolbar li {
+  width: 20%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.toolbar li.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.toolbar li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #000;
+}
+
+.section {
+  width: 80%;
+  height: 100%;
+  margin-top: 50px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pane {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+.pane1 {
+  background-color: #b3d4fc;
+  align-items: flex-end;
+}
+
+.pane1 img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.pane2 {
+  background-color: #f8a5c2;
+  align-items: flex-start;
+}
+
+.about h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.experiences h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.experiences ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experiences li {
+  margin-bottom: 40px;
+}
+
+.experiences h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.experiences h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.experiences p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.experiences ul ul {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+.experiences ul ul li {
+  margin-bottom: 10px;
+}
+
+.experiences .position {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.experiences .company {
+  font-weight: bold;
+}
+
+.experiences .location {
+  margin-left: auto;
+}
+
+.experiences .duration {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.experiences ul.experience-list li {
+  margin-bottom: 20px;
+}
+
+.experiences .duties-list {
+  width: 100%;
+}
+
