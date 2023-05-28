@@ -21,8 +21,10 @@ jobs:
       - name: Install 🔧
         run: yarn install
 
-      - name: Build & Deploy to GH Pages 🚀
+      - name: 🏗️ Build & Deploy to GH Pages 🚀
         run: |
+          git config --global user.email ${{ secrets.GIT_EMAIL }}
+          git config --global user.name ${{ secrets.GIT_NAME }}
           yarn run deploy
 
       # - name: Deploy to GH Pages 🚀
