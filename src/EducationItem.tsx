@@ -12,21 +12,20 @@ export interface Education {
 
 interface EducationItemProps {
   education: Education;
-  key: number;
 }
 
-const EducationItem: React.FC<EducationItemProps> = ({ education, key }) => {
+const EducationItem: React.FC<EducationItemProps> = ({ education }) => {
   const startDate = new Date(education.start_date);
   const endDate = new Date(education.end_date);
 
   return (
-    <li key={key} className="education-item mb-6">
-      <div className="flex items-center justify-between">
-        <div>
+    <li className="education-item mb-6">
+      <div className="flex items-start justify-between">
+        <div className="flex flex-col">
           <h3 className="text-2xl font-bold">{education.institution}</h3>
           <p className="text-lg">{education.degree}</p>
         </div>
-        <div className="text-right">
+        <div className="text-right flex flex-col justify-start">
           <p className="text-sm text-gray-500">
             {`${startDate.toLocaleString("default", {
               month: "short",

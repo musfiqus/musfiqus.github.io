@@ -15,27 +15,30 @@ interface ExperienceItemProps {
 const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience }) => {
   return (
     <li className="mb-8">
-      <div className="position flex justify-between">
+      <div className="flex justify-between items-center">
         <div>
-          <h3 className="text-2xl font-bold">{experience.title}</h3>
-          <div className="company text-lg">{experience.company}</div>
+          <h3 className="text-2xl font-bold">{experience.company}</h3>
+          <div className="title text-lg">{experience.title}</div>
         </div>
-        <div className="duration text-right text-lg">
-          {`${new Date(
-            experience.duration[0][0],
-            experience.duration[0][1],
-            experience.duration[0][2]
-          ).toLocaleString("default", {
-            month: "short",
-            year: "numeric",
-          })} - ${new Date(
-            experience.duration[1][0],
-            experience.duration[1][1],
-            experience.duration[1][2]
-          ).toLocaleString("default", {
-            month: "short",
-            year: "numeric",
-          })}`}
+        <div className="text-right">
+          <p className="duration text-sm text-gray-500">
+            {`${new Date(
+              experience.duration[0][0],
+              experience.duration[0][1],
+              experience.duration[0][2]
+            ).toLocaleString("default", {
+              month: "short",
+              year: "numeric",
+            })} - ${new Date(
+              experience.duration[1][0],
+              experience.duration[1][1],
+              experience.duration[1][2]
+            ).toLocaleString("default", {
+              month: "short",
+              year: "numeric",
+            })}`}
+          </p>
+          <p className="location text-sm">{experience.location}</p>
         </div>
       </div>
       <ul className="duties-list list-disc ml-8 mt-4">

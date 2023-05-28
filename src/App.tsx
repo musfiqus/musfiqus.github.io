@@ -63,7 +63,9 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:9000/experiences");
+      const response = await fetch(
+        "https://api.mushfiqussalehin.com/experiences"
+      );
       const data = await response.json();
       setExperiences(data);
     };
@@ -72,7 +74,9 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:9000/educations");
+      const response = await fetch(
+        "https://api.mushfiqussalehin.com/educations"
+      );
       const data = await response.json();
       setEducations(data);
     };
@@ -80,10 +84,10 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className={`overflow-${navOpen ? "hidden" : "scroll"}`}>
+    <div className="bg-gray-50 overflow-{navOpen ? 'hidden' : 'scroll'}">
       <header
         className={`fixed w-full bg-gray-50 flex justify-between items-center px-4 md:px-12 transition-all duration-200 ${
-          scrolledFromTop ? "h-14" : "h-24"
+          scrolledFromTop ? "h-14 shadow-lg" : "h-24"
         }`}
       >
         <button
@@ -150,20 +154,30 @@ const App: React.FC = () => {
       <section
         id="about"
         ref={sectionRefs.current.about}
-        className="pt-32 pb-16 px-8 md:px-12 bg-gray-50"
+        className="pt-32 pb-16 md:px-12 bg-gray-50 flex justify-center"
       >
-        <div className="max-w-7xl mx-auto md:flex md:items-center md:justify-between">
-          <div className="md:flex-1 md:mr-6">
+        <div className="max-w-7xl mx-auto bg-white rounded-xl shadow-lg p-6 md:w-3/4 lg:w-3/5">
+          {" "}
+          {/* width classes added here */}
+          <div className="mb-4 border-b border-gray-200 pb-2">
+            {" "}
+            {/* Removed flex and other flex styles */}
             <h1 className="font-bold text-2xl md:text-3xl text-black leading-tight">
               {"Hi! I'm Mushfiqus Salehin"}
             </h1>
+          </div>
+          <div className="mb-4 border-b border-gray-200 pb-2">
+            {" "}
+            {/* Removed flex and other flex styles */}
             <p className="mt-4 text-lg text-black">
               {
                 "I'm interested in developing scalable and efficient software solutions which can have a profound impact on people's daily lives and can be deployed into low powered devices. My dream is to make processing heavy technologies like machine learning more accessible to mass people, especially in areas like my home country where a very limited number of people can afford high end devices capable of on-device data crunching."
               }
             </p>
           </div>
-          <div className="md:flex-1 flex justify-around">
+          <div className="flex justify-around">
+            {" "}
+            {/* Removed flex and other flex styles */}
             <a
               href="https://github.com/musfiqus"
               target="_blank"
@@ -198,31 +212,37 @@ const App: React.FC = () => {
       <section
         id="experience"
         ref={sectionRefs.current.experience}
-        className="min-h-screen"
+        className="flex justify-center pb-12 md:px-12"
       >
-        <div className="experiences px-8">
-          <h2 className="text-4xl font-bold">Experiences</h2>
-          <ul className="experience-list mt-8">
+        <div className="experiences px-8 bg-white rounded-xl shadow-lg p-6 mt-4 mb-4 lg:w-3/5">
+          <h2 className="text-4xl font-bold mb-4 border-b border-gray-200 pb-2">
+            Experiences
+          </h2>
+          <ul className="experience-list mt-4">
             {experiences.map((experience, index) => (
               <ExperienceItem key={index} experience={experience} />
             ))}
           </ul>
         </div>
       </section>
+
       <section
         id="education"
         ref={sectionRefs.current.education}
-        className="min-h-screen"
+        className="flex justify-center pb-12 md:px-12"
       >
-        <div className="education px-8">
-          <h2 className="text-4xl font-bold">Education</h2>
-          <ul className="education-list mt-8">
+        <div className="education px-8 bg-white rounded-xl shadow-lg p-6 mt-4 mb-4 md:w-3/4 lg:w-3/5">
+          <h2 className="text-4xl font-bold mb-4 border-b border-gray-200 pb-2">
+            Education
+          </h2>
+          <ul className="education-list mt-4">
             {educations.map((education, index) => (
               <EducationItem key={index} education={education} />
             ))}
           </ul>
         </div>
       </section>
+
       <section
         id="contact"
         ref={sectionRefs.current.contact}
