@@ -21,12 +21,12 @@ jobs:
       - name: Install 🔧
         run: yarn install
 
-      - name: Build 🏗️
+      - name: Build & Deploy to GH Pages 🚀
         run: |
-          yarn build
+          yarn run deploy
 
-      - name: Deploy to GH Pages 🚀
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: public
+      # - name: Deploy to GH Pages 🚀
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: public
