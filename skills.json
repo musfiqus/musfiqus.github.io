@@ -1,0 +1,18 @@
+[
+  {
+    "label": "Languages",
+    "item": "Python, SQL, Java, TypeScript, JavaScript, Kotlin"
+  },
+  {
+    "label": "Frameworks",
+    "item": "Django, React, Android SDK, REST API, GraphQL, Python Mock, RxJava, JUnit Testing, JSON"
+  },
+  {
+    "label": "Developer Tools",
+    "item": "Docker, Docker Compose, Kubernetes, Git, Gradle, Jenkins, Bash, Memory Profiler, Android Studio Debugger"
+  },
+  {
+    "label": "Libraries",
+    "item": "pandas, NumPy, Matplotlib, Tensorflow"
+  }
+]
