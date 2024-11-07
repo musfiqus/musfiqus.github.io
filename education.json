@@ -1,0 +1,20 @@
+[
+  {
+    "institution": "Memorial University of Newfoundland",
+    "start_date": "2022-09-06T00:00:00",
+    "end_date": "2025-01-31T00:00:00",
+    "location": "St. John's, Canada",
+    "degree": "Master of Science in Computer Science",
+    "result": "CGPA: 4.0 out of 4.0",
+    "description": "Fully Funded by School of Graduate Studies fellowship worth 19000$/year"
+  },
+  {
+    "institution": "Daffodil International University",
+    "start_date": "2016-01-01T00:00:00",
+    "end_date": "2020-01-14T00:00:00",
+    "location": "Dhaka, Bangladesh",
+    "degree": "Bachelor of Science in Computer Science and Engineering",
+    "result": "CGPA: 3.82 out of 4.00",
+    "description": "Received 50% Academic Scholarship for 2 semesters and 30% for 9 semesters out of total 12 semesters for academic performance."
+  }
+]
