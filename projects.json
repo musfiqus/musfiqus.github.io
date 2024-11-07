@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Class Organizer",
+    "url": "https://github.com/musfiqus/class-organizer",
+    "tech": "Java, Android SDK, SQLite, Room, Material Design, Firebase, JSON",
+    "features": [
+      {
+        "text": "Built from scratch following Google’s latest Material Design Guideline 2018 bearing a simple yet useful design.",
+        "keywords": [
+          "scratch",
+          "Google’s latest Material Design Guideline 2018",
+          "useful design"
+        ]
+      },
+      {
+        "text": "This open-source app converts released routine excel files for 1500+ classes per week to JSON files delivered using Github Pages and consumed in app using Retrofit.",
+        "keywords": [
+          "open-source app",
+          "converts",
+          "routine excel files",
+          "1500+ classes per week",
+          "JSON",
+          "Github Pages",
+          "Retrofit"
+        ]
+      },
+      {
+        "text": "Downloaded over 5000 times with 1000+ daily active users and 300+ five star reviews.",
+        "keywords": [
+          "Downloaded over 5000 times",
+          "1000+ daily active users",
+          "300+ five star reviews"
+        ]
+      }
+    ],
+    "date": "2017-03-01T00:00:00"
+  }
+]
