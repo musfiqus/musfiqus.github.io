@@ -1,0 +1,89 @@
+[
+  {
+    "title": "Graduate Research Assistant",
+    "company": "Data and Image Analysis Group (DIAG) Lab",
+    "location": "St. John's, Canada",
+    "start_date": "2022-09-01T00:00:00",
+    "end_date": "2024-11-07T00:00:00",
+    "duties": [
+      {
+        "text": "Developing ML models to predict the Time-to-conversion for Cancer patients and scripts to analyze over 12500+ Medical CT scans on Compute Canada supercomputer cluster using Python, PyTorch, TensorFlow, Bash, and Shell scripting.",
+        "keywords": ["ML models", "Python", "PyTorch", "TensorFlow", "Bash", "Shell scripting"]
+      },
+      {
+        "text": "Optimizing scripts of research experiments for 2+ TBs of medical 3D CT scans using Python multithreading and batch processing to reduce the runtime of each by 60+ minutes on average.",
+        "keywords": ["Python multithreading", "batch processing"]
+      },
+      {
+        "text": "Analyzing experiment results and calculations and writing 2+ research publications using NumPy, pandas, Matplotlib, LaTeX and Scikit-learn.",
+        "keywords": ["NumPy", "pandas", "Matplotlib", "LaTeX", "Scikit-learn"]
+      }
+    ]
+  },
+  {
+    "title": "Software Engineer (Level 2)",
+    "company": "Alice Labs PTE Ltd",
+    "location": "Dhaka, Bangladesh",
+    "start_date": "2021-08-01T00:00:00",
+    "end_date": "2022-08-01T00:00:00",
+    "duties": [
+      {
+        "text": "Led the full stack development and maintenance of the MyAlice e-commerce help desk using Python, TypeScript, MongoDB, PostgreSQL, Docker, Kubernetes to help businesses gain up to 35% more orders from their customers.",
+        "keywords": ["Python", "TypeScript", "MongoDB", "PostgreSQL", "Docker", "Kubernetes"]
+      },
+      {
+        "text": "Built the Shopify module from the scratch using Django, React within 1 sprint to support 300+ new e-commerces.",
+        "keywords": ["Django", "React", "Shopify"]
+      },
+      {
+        "text": "Promoted to Software Engineer L2 from Software Engineer L1 within 6 months of joining; Awarded as the Best performer of Q4 2021.",
+        "keywords": ["Promoted", "Best performer"]
+      },
+      {
+        "text": "Increased reliability by converting internal e-commerce API calls to GraphQL; reduced the errors reported by AWS Cloudwatch by 40%.",
+        "keywords": ["GraphQL", "AWS Cloudwatch"]
+      },
+      {
+        "text": "Optimized the performance of the e-commerce front-end by rewriting 35+ Redux state management calls.",
+        "keywords": ["Redux"]
+      },
+      {
+        "text": "Enhanced the Django unit test coverage by 70% and setup unit testing during stage deployment using Github Actions CI/CD.",
+        "keywords": ["Django", "unit testing", "Github Actions CI/CD"]
+      }
+    ]
+  },
+  {
+    "title": "Software Engineer",
+    "company": "Field Information Solutions GmbH",
+    "location": "Dhaka, Bangladesh",
+    "start_date": "2020-02-01T00:00:00",
+    "end_date": "2021-08-01T00:00:00",
+    "duties": [
+      {
+        "text": "Led the feature development and maintenance of MYNKG FIS and Bloom Kenya Android apps using Android SDK, Java, Kotlin, MongoDB Realm to remotely support 2000+ coffee producing farmers in rural areas of Honduras and Kenya.",
+        "keywords": ["Android SDK", "Java", "Kotlin", "MongoDB Realm"]
+      },
+      {
+        "text": "Spearheaded the R&D effort to optimize memory usage, disk usage, database queries, codebase structures, MVVM design patterns, and quality of life improvements to increase the performance of 10 products on lower-end Android devices.",
+        "keywords": ["memory usage", "disk usage", "database queries", "codebase structures", "MVVM design patterns"]
+      },
+      {
+        "text": "Promoted to Software Engineer from Junior Software Engineer with excellent performance reviews.",
+        "keywords": ["Promoted", "excellent performance reviews"]
+      },
+      {
+        "text": "Designed APIs and implemented an on-demand syncing module using reactive programming (RxJava) multithreaded workflows to enable features that work in areas without mobile data to support 10000+ small business owners.",
+        "keywords": ["APIs", "reactive programming", "RxJava", "multithreaded workflows"]
+      },
+      {
+        "text": "Reduced memory leaks by 95% by optimizing legacy codes and resource usage with the help of Android Debug Tools and Resource monitors.",
+        "keywords": ["memory leaks", "Android Debug Tools", "Resource monitors"]
+      },
+      {
+        "text": "Mentored 2 intern engineers and received exceptional feedback on teamwork and leadership.",
+        "keywords": ["Mentored", "teamwork", "leadership"]
+      }
+    ]
+  }
+]
